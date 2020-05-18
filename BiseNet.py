@@ -27,7 +27,7 @@ class StemBlock(nn.Module):
         self.conv1 = conv2d(3,16,3,1,2)
         self.conv_1x1 = conv2d(16,8,1,0,1)
         self.conv_3x3 = conv2d(8,16,3,1,2)
-        self.mpooling = nn.AvgPool2d(3,2,1)
+        self.mpooling = nn.MaxPool2d(3,2,1)
         self.conv2 = conv2d(32,16,3,1,1)
     def forward(self,bottom):
         base = self.conv1(bottom)
